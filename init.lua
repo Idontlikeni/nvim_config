@@ -17,9 +17,8 @@ rtp:prepend(lazypath)
 
 -- [[ Configure and install plugins ]]
 require('lazy').setup({
+  -- {'neovim/nvim-lspconfig', opts = {} },
   { 'NMAC427/guess-indent.nvim', opts = {} },
-  -- require 'plugins.gitsigns'
-  -- require("plugins.gitsigns")
   { -- Adds git related signs to the gutter, as well as utilities for managing changes
     'lewis6991/gitsigns.nvim',
     opts = {
@@ -35,14 +34,16 @@ require('lazy').setup({
   require("plugins.which_key"),
   require("plugins.telescope"),
   require ('config.themes'),
-  -- require 'plugins.todo-comments'
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
   require 'plugins.mini',
   require 'plugins.treesitter',
-  -- require 'plugins.telescope'
-  -- require 'plugins.treesitter'
   require 'plugins.indent_line',
   require 'plugins.autopairs',
+  -- require("plugins.nvim-lspconfig"),
+  -- require("plugins.neo-tree"),
+  require("plugins.mason"),
+  require("plugins.blink"),
+  require("plugins.barbar")
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
